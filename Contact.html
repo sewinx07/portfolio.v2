@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Taha Portfolio</title>
+</head>
+<body class="body-contact">
+    <header>
+        <a href="index.html" class="logo">Sewinx</a>
+
+        <nav>
+            <a href="index.html" > Home</a>
+            <a href="Services.html"  >Services</a>
+            <a href="Skills.html"  >Skills</a>
+            <a href="Portfolio.html"  >Portfolio</a>
+            <a href="Experience.html"  >Experience</a>
+            <a href="Contact.html" class="active" >Contact</a>
+        </nav>
+    </header>
+    </br>
+    <div class="container">
+        <div class="title">
+            <h2>Get In <span style="color:#ffffff">Touch</span></h2>
+            <p>Have a project in mind? Let's discuss how I can help bring your vision to life.</p>
+        </div>
+        </br>
+        </br>
+        </br>
+        <div class="content">
+            <div class="left">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <span>
+                                <i class="fa-solid fa-envelope"></i>
+                            </span> 
+                            <a href="mailto:tahagmiri13@gmail.com">tahagmir13@gmail.com</a>
+                        </div>
+                        </br>
+                        <div class="info-item">
+                            <span>
+                                <i class="fa-solid fa-phone"></i>
+                            </span> 
+                            <a href="tel:+21651166275">+216 51 66 275</a>
+                        </div>
+                        </br>
+                        <div class="info-item">
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>Gabès, Tunis
+                        </div>
+                        </br>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/taha-gmir-018026218/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/sewinx07"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://x.com/TahaGmir07"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/sewinx.exe/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+            </div>
+            <div class="right">
+                <form onsubmit="handleMail(event)">
+                    <h3>Send Me a Message</h3>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" placeholder="Your name" required>
+
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required>
+
+
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" placeholder="Subject" required>
+
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function handleMail(e){
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById('name').value);
+        const email = encodeURIComponent(document.getElementById('email').value);
+        const subject = encodeURIComponent(document.getElementById('subject').value);
+        const message = encodeURIComponent(document.getElementById('message').value);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        window.location.href = `mailto:tahagmiri1@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>

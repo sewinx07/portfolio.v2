@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Taha Portfolio</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Sewinx</a>
+
+        <nav>
+            <a href="index.html" > Home</a>
+            <a href="Services.html"  >Services</a>
+            <a href="Skills.html"  >Skills</a>
+            <a href="Portfolio.html" class="active" >Portfolio</a>
+            <a href="Experience.html" >Experience</a>
+            <a href="Contact.html" >Contact</a>
+        </nav>
+    </header>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section class="portfolio-section">
+    <div class="portfolio-container">
+
+        <div class="title">
+            <h2>My <span>Portfolio</span></h2>
+            <p>Projects combining creativity, design, and technical skills.</p>
+        </div>
+        </br>
+        </br>
+        </br>
+        <!-- Filter Buttons -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="graphic">Graphic</button>
+            <button class="filter-btn" data-filter="video">Video</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="portfolio-grid">
+
+            <!-- Card -->
+            <div class="portfolio-card reveal web">
+                <div class="portfolio-img">
+                    <!-- SVG Illustration -->
+                    <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#1a1a1a"/>
+                        <rect x="40" y="40" width="320" height="170" rx="10" fill="#b74b4b"/>
+                        <rect x="60" y="70" width="280" height="20" fill="#fff"/>
+                        <rect x="60" y="110" width="200" height="15" fill="#eee"/>
+                        <rect x="60" y="140" width="150" height="15" fill="#eee"/>
+                    </svg>
+
+                    <!-- Overlay -->
+                    <div class="portfolio-overlay">
+                        <a href="#" class="overlay-btn">View</a>
+                        <a href="#" class="overlay-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-content">
+                    <h3>Web Project</h3>
+                    <p>Responsive website with modern UI.</p>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="portfolio-card reveal graphic">
+                <div class="portfolio-img">
+                    <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#1a1a1a"/>
+                        <circle cx="200" cy="110" r="60" fill="#b74b4b"/>
+                        <rect x="120" y="190" width="160" height="20" fill="#fff"/>
+                    </svg>
+
+                    <div class="portfolio-overlay">
+                        <a href="#" class="overlay-btn">View</a>
+                        <a href="#" class="overlay-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-content">
+                    <h3>Graphic Design</h3>
+                    <p>Creative poster & branding visuals.</p>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="portfolio-card reveal video">
+                <div class="portfolio-img">
+                    <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#1a1a1a"/>
+                        <polygon points="170,80 170,170 250,125" fill="#b74b4b"/>
+                        <rect x="120" y="190" width="160" height="15" fill="#fff"/>
+                    </svg>
+
+                    <div class="portfolio-overlay">
+                        <a href="#" class="overlay-btn">View</a>
+                        <a href="#" class="overlay-btn">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-content">
+                    <h3>Video Editing</h3>
+                    <p>Storytelling through motion & sound.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+/* FILTER */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.portfolio-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+            card.classList.remove('hide');
+            if (filter !== 'all' && !card.classList.contains(filter)) {
+                card.classList.add('hide');
+            }
+        });
+    });
+});
+
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+});
+</script>
+
+    
+</body>
+</html>
