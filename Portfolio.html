@@ -12,7 +12,7 @@
     <header>
         <a href="index.html" class="logo">Sewinx</a>
 
-        <nav>
+        <nav class="nav-links">
             <a href="index.html" > Home</a>
             <a href="Services.html"  >Services</a>
             <a href="Skills.html"  >Skills</a>
@@ -20,6 +20,9 @@
             <a href="Experience.html" >Experience</a>
             <a href="Contact.html" >Contact</a>
         </nav>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
     </br>
     </br>
@@ -348,7 +351,7 @@
                     <img src="img/design/final/final1112554.png" alt="Portfolio Image">
 
                     <div class="portfolio-overlay">
-                        <a href="https://drive.google.com/file/d/1oVBvDYH6jKCQNW5riW8ocgSoFjzE2MzW/view?usp=sharing" class="overlay-btn" target="_blank" rel="noopener noreferrer">View</a>
+                        <a href="https://youtu.be/jCvDt9kRSDg" class="overlay-btn" target="_blank" rel="noopener noreferrer">View</a>
                     </div>
                 </div>
             </div>
@@ -363,7 +366,7 @@
                     <img src="img/design/final/final1112.png" alt="Portfolio Image">
 
                     <div class="portfolio-overlay">
-                        <a href="https://drive.google.com/file/d/1mRAmyRig4-VOhU8wMSjtM4UQDlT-zt1I/view?usp=sharing" class="overlay-btn" target="_blank" rel="noopener noreferrer">View</a>
+                        <a href="https://youtu.be/4KMD6Efhow4" class="overlay-btn" target="_blank" rel="noopener noreferrer">View</a>
                     </div>
                 </div>
             </div>
@@ -411,6 +414,14 @@ window.addEventListener('scroll', () => {
     });
 });
 </script>
+<script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
     
 </body>

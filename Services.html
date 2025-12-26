@@ -12,7 +12,7 @@
     <header>
         <a href="index.html" class="logo">Sewinx</a>
 
-        <nav>
+        <nav class="nav-links">
             <a href="index.html" > Home</a>
             <a href="Services.html" class="active" >Services</a>
             <a href="Skills.html" >Skills</a>
@@ -20,6 +20,9 @@
             <a href="Experience.html" >Experience</a>
             <a href="Contact.html" >Contact</a>
         </nav>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
     
     <section class="services-section">
@@ -89,6 +92,14 @@
             </div>
         </div>
     </section>
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>

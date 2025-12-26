@@ -816,3 +816,76 @@ button:hover {
         margin-left: 10px;
     }
 }
+
+
+/* =======================
+   NAVIGATION (DESKTOP)
+======================= */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn i {
+    pointer-events: none;
+}
+
+/* =======================
+   NAVIGATION (MOBILE)
+======================= */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    /* Show hamburger icon */
+    .menu-btn {
+        display: block;
+        color: white;
+    }
+
+    /* Hide nav on mobile by default */
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: #161616;
+        width: 220px;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 10px;
+        display: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        border: 2px solid #b74b4b;
+        z-index: 999;
+    }
+
+    /* Show nav when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Mobile nav links styling */
+    .nav-links a {
+        margin: 0;
+        padding: 10px 0;
+        font-size: 2rem;
+        color: white;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: #b74b4b;
+        border-bottom: 2px solid #b74b4b;
+    }
+}
