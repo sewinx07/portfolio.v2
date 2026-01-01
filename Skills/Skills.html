@@ -83,7 +83,26 @@
             navLinks.classList.toggle('active');
         });
     </script>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); 
+            alert("Right-click is disabled!");
+        });
+    </script>
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && ["I","J"].includes(e.key.toUpperCase())) ||
+            (e.ctrlKey && e.key.toUpperCase() === "U")
+            ) {
+            e.preventDefault();
+            alert("Shortcut disabled!");
+            }
+        });
+    </script>
 </body>
 
 </html>
+
 
